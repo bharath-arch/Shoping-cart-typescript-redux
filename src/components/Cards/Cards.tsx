@@ -1,15 +1,20 @@
 import React from "react";
 import Button from "../ButtonGroup/Button";
 import { CartItemsType } from "../../types/CartItemsType";
+import { useQuery } from "react-query";
+import { getProducts } from "../../Api/ShopingCartFetch";
 
-interface CardsProps {
-    products: CartItemsType[] | undefined;
-  }
-const Cards: React.FC<CardsProps> = ({products = []}) => {
+
+const Cards: React.FC = () => {
+
+  const { data} = useQuery<CartItemsType[]>(
+    ["products"],
+    getProducts
+  );
   return (
     <>
       <div className="flex flex-wrap gap-3 justify-center p-5 ">
-        {products?.map((item, index) => (
+        {data?.map((item, index) => (
           <div
             key={index}
             className="w-60 min-h-96 flex  flex-col place-items-center p-3 border relative"

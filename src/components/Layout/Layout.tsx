@@ -1,12 +1,12 @@
 import { useQuery } from "react-query";
 import { getProducts } from "../../Api/ShopingCartFetch";
-import Cards from "../../components/Cards/Cards";
 import Navbar from "../../components/Navbar/Navbar";
 import { CartItemsType } from "../../types/CartItemsType";
 import AnimatePing from "../../LoadingAnimation/Animateping";
+import { Outlet } from "react-router";
 
 export const Layout: React.FC = () => {
-    const { data, error, isLoading } = useQuery<CartItemsType[]>(
+    const {  error, isLoading } = useQuery<CartItemsType[]>(
         ["products"],
         getProducts
       );
@@ -23,7 +23,8 @@ export const Layout: React.FC = () => {
   return (
     <>
       <Navbar />
-      <Cards products={data} />
+     
+      <Outlet/>
     </>
   );
 };
