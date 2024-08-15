@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <ul className="flex justify-between px-10 py-5 items-center border">
-        <li className="font-bold text-4xl italic">Shop</li>
+        <li className="text-2xl font-semibold text-indigo-600">ShopEase</li>
         <div className="flex gap-10">
         <li className="cursor-pointer">
             <Link to={"/"}>Home</Link>

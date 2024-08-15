@@ -1,35 +1,29 @@
 export const About: React.FC = () => {
   return (
-    <div className="text-center ">
-      <h1 className="mt-5 p-4 text-3xl font-semibold">About Us</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id eum,
-        aliquid aliquam iure, sequi esse saepe excepturi odio nulla, magni enim
-        nisi blanditiis dolorem recusandae obcaecati fugit. At ipsa repellendus
-        similique voluptate possimus nam, nostrum nobis debitis dolores pariatur
-        placeat omnis modi molestias reprehenderit eligendi natus facilis
-        voluptatem voluptatum. Rem, omnis nemo! Eos adipisci vel officia ab,
-        nulla quis facilis quisquam officiis consequuntur voluptatum inventore!
-        Voluptas doloribus praesentium, error beatae eum incidunt quisquam sed.
-        Officia repudiandae delectus ipsum autem at eius cum qui sunt voluptate
-        error dolore natus, aspernatur assumenda. Mollitia aliquam laborum
-        perspiciatis hic incidunt debitis dolorem commodi tempore veritatis,
-        quam ratione iure ducimus doloremque maxime similique autem ipsum
-        soluta? Fuga consequatur commodi saepe quae magnam obcaecati? Labore,
-        perferendis quas quasi rem rerum quod maxime debitis recusandae
-        excepturi corporis? Accusantium reprehenderit delectus temporibus
-        molestias impedit illum rerum odit! Inventore, tenetur blanditiis. Vero
-        praesentium, quae explicabo iste modi natus obcaecati pariatur optio
-        fuga quidem facere molestias officiis voluptatum neque ullam atque quis
-        nostrum repudiandae consectetur, debitis excepturi! Consequuntur libero,
-        asperiores in natus soluta commodi nesciunt at doloribus voluptatem,
-        laudantium debitis suscipit quo tenetur nemo vitae harum ipsa
-        reprehenderit saepe recusandae nobis similique. Saepe ab voluptatem ipsa
-        itaque quidem in id veniam, facilis doloribus voluptatibus quisquam!
-        Consectetur impedit nobis dolorum aperiam vitae asperiores autem
-        consequuntur neque fugiat, quibusdam dicta aspernatur vero vel, ad nulla
-        fuga omnis dignissimos porro animi adipisci. Ex quasi veniam
-        necessitatibus unde, error repellat totam! Enim, voluptates dicta!
+    <div className="text-center p-6">
+      <h1 className="mt-5 text-4xl font-bold text-gray-800">About Us</h1>
+      <p className="mt-4 text-lg text-gray-600">
+        Welcome to <span className="font-semibold text-indigo-600">ShopEase</span> – your go-to destination for a seamless online shopping experience!
+      </p>
+      <p className="mt-4 text-lg text-gray-600">
+        At ShopEase, our mission is to revolutionize the way you shop online by offering a diverse range of high-quality products, unbeatable prices, and exceptional customer service. We understand that shopping should be an enjoyable experience, and we're dedicated to making it as convenient and satisfying as possible.
+      </p>
+      <h2 className="mt-6 text-2xl font-semibold text-gray-800">Our Vision</h2>
+      <p className="mt-4 text-lg text-gray-600">
+        Our vision is to be the most trusted and innovative e-commerce platform, continually evolving to meet the needs of our customers. We aim to create a shopping environment where you can find everything you need in one place, with ease and confidence.
+      </p>
+      <h2 className="mt-6 text-2xl font-semibold text-gray-800">What Sets Us Apart</h2>
+      <ul className="mt-4 text-lg text-gray-600 ">
+        <li>Extensive Product Range: From the latest gadgets to everyday essentials, we offer a wide selection of products to cater to all your needs.</li>
+        <li>Competitive Pricing: Enjoy great deals and discounts on top brands and products, ensuring you get the best value for your money.</li>
+        <li>Exceptional Customer Service: Our friendly and knowledgeable customer support team is here to assist you with any inquiries or issues, ensuring a smooth shopping experience.</li>
+        <li>Secure Shopping Experience: Shop with confidence knowing that your personal information is protected with state-of-the-art security measures.</li>
+      </ul>
+      <p className="mt-6 text-lg text-gray-600">
+        At ShopEase, we are more than just an e-commerce platform – we are a community dedicated to enhancing your shopping journey. Thank you for choosing us as your preferred online store. We look forward to serving you and making your shopping experience enjoyable and effortless.
+      </p>
+      <p className="mt-4 text-lg text-gray-600">
+        For any questions or feedback, feel free to <a href="/contact" className="text-indigo-600 underline">contact us</a>. Happy shopping!
       </p>
     </div>
   );

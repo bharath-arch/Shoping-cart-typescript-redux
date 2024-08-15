@@ -1,16 +1,17 @@
 import React from "react";
 import Button from "../ButtonGroup/Button";
-import { CartItemsType } from "../../types/CartItemsType";
-import { useQuery } from "react-query";
-import { getProducts } from "../../Api/ShopingCartFetch";
-
+import { useGetDataQuery } from "../../Redux/rtk-querry/rtkSllice";
+// import { CartItemsType } from "../../types/CartItemsType";
+// import { useQuery } from "react-query";
+// import { getProducts } from "../../Api/ShopingCartFetch";
 
 const Cards: React.FC = () => {
+  // const { data} = useQuery<CartItemsType[]>(
+  //   ["products"],
+  //   getProducts
+  // );
 
-  const { data} = useQuery<CartItemsType[]>(
-    ["products"],
-    getProducts
-  );
+  const { data, isLoading, error } = useGetDataQuery();
   return (
     <>
       <div className="flex flex-wrap gap-3 justify-center p-5 ">
