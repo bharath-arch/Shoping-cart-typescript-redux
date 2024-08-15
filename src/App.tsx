@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
-import NewEx from "./components/NewEx/NewEx";
 import { About } from "./components/About/About";
 import Cards from "./components/Cards/Cards";
+import Cart from "./components/cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <NewEx />,
+        element: <Cart />,
       },
       {
         path: "/about",

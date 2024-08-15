@@ -4,7 +4,7 @@ interface Props {
   item?: string;
   id: number;
   title: string;
-  image: string;
+  image: string | undefined;
 }
 const Button: React.FC<Props> = ({ id, title, image }) => {
   const handleAdd = useHandleAddCart(id, title, image);

@@ -1,13 +1,12 @@
 import { useDispatch } from "react-redux";
 
 // import { CartItemsType } from "./App";
-import { getProducts } from "../Api/ShopingCartFetch";
 // Fetch products from the API
-import { CartItem, CartItemsType } from "../types/CartItemsType";
+import { CartItem } from "../types/CartItemsType";
 import { pushToCart, removefromcart } from "../Redux/sclice/cart";
 
 
-export const useHandleAddCart = (id: number, name: string, image: string) => {
+export const useHandleAddCart = (id: number, name: string, image: string | undefined) => {
   const dispatch = useDispatch();
 
   const handleAddCart = () => {
@@ -20,7 +19,7 @@ export const useHandleAddCart = (id: number, name: string, image: string) => {
 };
 
 // Handle removing items from the cart
-export const useHandleRemoveCart = (id: number, name: string, image: string) => {
+export const useHandleRemoveCart = (id: number, name: string, image: string | undefined) => {
   const dispatch = useDispatch();
 
   const handleRemoveCart = () => {
