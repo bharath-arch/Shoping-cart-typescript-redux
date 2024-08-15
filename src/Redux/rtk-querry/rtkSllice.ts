@@ -10,7 +10,7 @@ export const productApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: StoreUrl }),
   endpoints: (builder) => ({
     getData: builder.query<CartItemsType[] , void>({
-      query: () => `/`,
+      query: () => `/products`,
     }),
   }),
 })
