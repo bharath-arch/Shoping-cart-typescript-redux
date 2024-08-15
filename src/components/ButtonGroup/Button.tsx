@@ -11,6 +11,7 @@ const Button: React.FC<Props> = ({ id, title, image }) => {
   const handleRemoveCart = useHandleRemoveCart(id, title, image);
   return (
     <>
+    
       <button className=" p-1 flex gap-3 items-center">
         <span className="border border-black p-1" onClick={() => handleAdd()}>
           {" "}
@@ -24,7 +25,7 @@ const Button: React.FC<Props> = ({ id, title, image }) => {
           &minus;
         </span>
       </button>
-      <button className="border border-black p-1 ">buY</button>
+      <button className="border border-black p-1 px-16 ">buY</button>
     </>
   );
 };
