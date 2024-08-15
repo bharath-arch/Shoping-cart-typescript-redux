@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { getProducts } from "../../Api/ShopingCartFetch";
 import Cards from "../../components/Cards/Cards";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { CartItemsType } from "../../types/CartItemsType";
 import AnimatePing from "../../LoadingAnimation/Animateping";
 

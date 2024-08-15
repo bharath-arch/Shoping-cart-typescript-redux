@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../Redux/store";
-import Cart from "./cart/Cart";
+import { RootState } from "../../Redux/store";
+import Cart from "../cart/Cart";
 
 const Navbar: React.FC = () => {
   const cartsval = useSelector((state: RootState) => state.cart.cart);
