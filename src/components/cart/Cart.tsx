@@ -29,7 +29,7 @@ const Cart: React.FC<CartProps> = ({ active }) => {
           <span className="flex justify-end w-[20px] min-h-[20px]  bg-slate-100  relative right-[-22rem] top-[-1.5rem] transform rotate-45 "></span>
           <div className="relative right-[-2rem] top-[-2.2rem] h-96 w-96  z-10 bg-slate-100 overflow-hidden p-2">
             <div className="overflow-y-scroll h-full scroll-smooth scroll-m-1">
-              <p className="text-3xl font-semibold text-center p-3 ">Cart</p>
+              <p className="text-3xl font-semibold text-center p-3 select-none">Cart</p>
               {/* {cartsval.map((item, index) => (
             <div key={index}>
               <p>{item.id}</p>
