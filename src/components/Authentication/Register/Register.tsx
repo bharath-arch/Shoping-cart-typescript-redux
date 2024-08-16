@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginBtn } from "../../ButtonGroup/LoginBtn/LoginBtn";
+import { Link } from "react-router-dom";
 
 export const Register: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export const Register: React.FC = () => {
   }
 
   const handleChangeEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log(e.target.value)
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
@@ -27,6 +29,7 @@ export const Register: React.FC = () => {
       setInvalidEmail(true);
     }
   };
+  console.log(formdata.email)
   return (
     <>
       <div className="h-screen w-screen flex items-center justify-center">
@@ -67,7 +70,7 @@ export const Register: React.FC = () => {
                   />
                 </div>
                 <div className="flex justify-center items-center">
-                 <LoginBtn/>
+                  <LoginBtn />
                 </div>
               </form>
 
@@ -79,8 +82,10 @@ export const Register: React.FC = () => {
 
               <div className="text-center pb-4 text-[0.75rem]  font-light ">
                 <p>
-                  <span>Don’t have an account Yet ?</span>{" "}
-                  <span className="text-blue-800">Click Here to Register</span>
+                  <span>Are You Lost ?</span>{" "}
+                  <span className="text-blue-800">
+                    <Link to={"/login"}>Click Here to Login</Link>
+                  </span>
                 </p>
               </div>
             </div>
