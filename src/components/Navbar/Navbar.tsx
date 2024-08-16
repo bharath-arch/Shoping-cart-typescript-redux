@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const cartsval = useSelector((state: RootState) => state.cart.cart);
+  const [isActive, setIsActive] = useState("/");
 
+  useEffect(() => {
+    const handlePathnameChange = () => {
+      const query = window.location.pathname;
+      console.log(query);
+      setIsActive(query);
+    };
+
+    // Run the function on initial render
+    handlePathnameChange();
+
+    // Add event listener to handle path changes if needed
+    window.addEventListener("popstate", handlePathnameChange);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("popstate", handlePathnameChange);
+    };
+  }, []);
   const [istoggke, setIstoggke] = useState(false);
 
   // const [isCartActive, setIsCartActive] = useState(false);
@@ -15,10 +34,20 @@ const Navbar: React.FC = () => {
       <ul className="flex justify-between px-10 py-5 items-center border">
         <li className="text-2xl font-semibold text-indigo-600">ShopEase</li>
         <div className="hidden gap-10  md:flex">
-          <li className="cursor-pointer">
+          <li
+            className={`cursor-pointer ${
+              isActive === "/" ? "text-red-500" : ""
+            }`}
+            onClick={() => setIsActive("/")}
+          >
             <Link to={"/"}>Home</Link>
           </li>
-          <li className="cursor-pointer">
+          <li
+            className={`cursor-pointer ${
+              isActive === "/cart" ? "text-red-500" : ""
+            }`}
+            onClick={() => setIsActive("/cart")}
+          >
             <span>
               <Link to={"/cart"}>Cart</Link>
             </span>
@@ -26,7 +55,12 @@ const Navbar: React.FC = () => {
               {cartsval.length}
             </span>
           </li>
-          <li className="cursor-pointer">
+          <li
+            className={`cursor-pointer ${
+              isActive === "/about" ? "text-red-500" : ""
+            }`}
+            onClick={() => setIsActive("/about")}
+          >
             <Link to={"about"}>AboutUs</Link>
           </li>
         </div>
@@ -46,16 +80,29 @@ const Navbar: React.FC = () => {
             {/* Dropdown menu */}
             <div className="absolute right-8 top-0  bg-white shadow-lg rounded-lg p-4 text-center ">
               <ul className="flex flex-col gap-4">
-                <li className="cursor-pointer p-3">
+                <li
+                  className={`cursor-pointer p-3 ${
+                    isActive === "/" ? "text-red-500" : ""
+                  }`}
+                  onClick={() => setIsActive("/")}
+                >
                   <Link to="/">Home</Link>
                 </li>
-                <li className="cursor-pointer p-3 relative">
+                <li
+                  className={`cursor-pointer p-3 relative ${
+                    isActive === "/cart" ? "text-red-500" : ""
+                  }`}
+                  onClick={() => setIsActive("/cart")}
+                >
                   <Link to="/cart">Cart</Link>
                   <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-semibold px-2 py-0.5 select-none rounded-full">
                     {cartsval.length}
                   </span>
                 </li>
-                <li className="cursor-pointer p-3">
+                <li className={`cursor-pointer p-3 relative ${
+                    isActive === "/about" ? "text-red-500" : ""
+                  }`}
+                  onClick={() => setIsActive("/about")}>
                   <Link to="/about">About Us</Link>
                 </li>
               </ul>

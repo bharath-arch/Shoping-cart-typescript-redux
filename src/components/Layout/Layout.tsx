@@ -25,6 +25,7 @@ export const Layout: React.FC = () => {
       }
   return (
     <>
+    
       <Navbar />
      
       <Outlet/>
