@@ -15,23 +15,52 @@ const Cart: React.FC = () => {
         {/* <span className="flex justify-end w-[20px] min-h-[20px]  bg-slate-100  relative right-[-22rem] top-[-1.5rem] transform rotate-45 "></span> */}
         {/* <div className="relative right-[-2rem] top-[-2.2rem] h-96 w-96  z-10 bg-slate-100 overflow-hidden p-2"> */}
         {/* <div className="overflow-y-scroll h-full scroll-smooth scroll-m-1"> */}
-        <p className="text-3xl font-semibold text-center p-3 select-none">
+        <p className=" ml-10 text-3xl font-semibold p-3 select-none">
           Cart
         </p>
-        <div className="flex flex-col gap-3 justify-center">
-          {cartsval?.map((item) => (
-            <div key={item.id} className=" p-3 border  ">
-              <img src={item.image} alt="" className="h-36 w-36 m-auto" />
-              <ul className="text-center ">
-                <li className="mt-10">{item.name}</li>
-                <li className="text-green-600">{item.quantity}</li>
-                {/* <li className="text-2xl font-semibold">{item.price} &#8377; </li> */}
-              </ul>
-              <div className=" flex flex-col items-center  gap-2 ">
-                <Button image={item.image} id={item.id} title={item.name} />
-              </div>
+        <div className="flex gap-5">
+          <div className="flex-auto md:flex-[4]">
+            {cartsval?.length === 0 && (
+              <>
+                <div className="flex justify-between items-center p-3 border ml-10 w-auto ">
+                  No Item Found
+                </div>
+              </>
+            )}
+            {cartsval?.map((item) => (
+              <>
+                <div
+                  key={item.id}
+                  className="flex justify-between items-center p-3 border ml-10 "
+                >
+                  <div className="flex gap-3">
+                    <img src={item.image} alt="" className="h-36 w-36 " />
+                    <ul className="text-center ">
+                      <li className="mt-10">{item.name}</li>
+                      <li>
+                        Item Quantity:{" "}
+                        <span className="text-green-600">{item.quantity}</span>
+                      </li>
+                      {/* <li className="text-2xl font-semibold">{item.price} &#8377; </li> */}
+                    </ul>
+                  </div>
+                  <div className=" flex flex-col items-center  gap-2 ">
+                    <Button image={item.image} id={item.id} title={item.name} />
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+          <div className="flex-1 flex flex-wrap">
+            <div className="flex flex-col gap-10 text-center p-6 border mr-10  ">
+              <p className="flex flex-col">
+                Subtotal (4 items): <span>&#8377; 5,196.00</span>
+              </p>
+              <button className="border border-black p-1 rounded-lg">
+                Proceed to Checkout
+              </button>
             </div>
-          ))}
+          </div>
         </div>
         {/* </div> */}
         {/* </div> */}
