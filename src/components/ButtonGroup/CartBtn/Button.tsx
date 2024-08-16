@@ -1,4 +1,4 @@
-import { useHandleAddCart, useHandleRemoveCart } from "../../utils/handlecart";
+import { useHandleAddCart, useHandleRemoveCart } from "../../../utils/handlecart";
 
 interface Props {
   item?: string;

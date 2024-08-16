@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "../../Redux/store";
-import Button from "../ButtonGroup/Button";
+import Button from "../ButtonGroup/CartBtn/Button";
 
 // interface CartProps {
 //   active: boolean;

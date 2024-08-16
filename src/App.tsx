@@ -4,6 +4,8 @@ import { Layout } from "./components/Layout/Layout";
 import { About } from "./components/About/About";
 import Cards from "./components/Cards/Cards";
 import Cart from "./components/cart/Cart";
+import { Login } from "./components/Authentication/Login/Login";
+import { Register } from "./components/Authentication/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ]);
 
 const App: React.FC = () => {

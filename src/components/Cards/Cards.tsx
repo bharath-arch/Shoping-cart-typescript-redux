@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../ButtonGroup/Button";
+import Button from "../ButtonGroup/CartBtn/Button";
 import { useGetDataQuery } from "../../Redux/rtk-querry/rtkSllice";
 // import { CartItemsType } from "../../types/CartItemsType";
 // import { useQuery } from "react-query";
