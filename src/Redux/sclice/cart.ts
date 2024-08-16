@@ -13,7 +13,7 @@ export const counterSlice = createSlice({
     pushToCart: (state, action: PayloadAction<CartItem>) => {
       const item = action.payload;
 
-      // state.cart.push(item);
+      
 
       // Find the index of the existing item in the cart
       const existingItemIndex = state.cart.findIndex(
