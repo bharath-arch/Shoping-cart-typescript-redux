@@ -11,13 +11,13 @@ const Cards: React.FC = () => {
   //   getProducts
   // );
 
-  const { data, isLoading, error } = useGetDataQuery();
+  const { data } = useGetDataQuery();
   return (
     <>
       <div className="flex flex-wrap gap-3 justify-center p-5 ">
-        {data?.map((item, index) => (
+        {data?.map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="w-60 min-h-96 flex  flex-col place-items-center p-3 border relative"
           >
             <img src={item.image} className="w-20 h-20" />

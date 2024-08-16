@@ -19,8 +19,8 @@ const Cart: React.FC = () => {
           Cart
         </p>
         <div className="flex flex-col gap-3 justify-center">
-          {cartsval?.map((item, index) => (
-            <div key={index} className=" p-3 border  ">
+          {cartsval?.map((item) => (
+            <div key={item.id} className=" p-3 border  ">
               <img src={item.image} alt="" className="h-36 w-36 m-auto" />
               <ul className="text-center ">
                 <li className="mt-10">{item.name}</li>
