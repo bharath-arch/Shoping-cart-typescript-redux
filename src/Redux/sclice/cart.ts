@@ -53,7 +53,7 @@ export const counterSlice = createSlice({
        
       }
 
-      console.log(state.cart.length);
+      // console.log(state.cart.length);
     },
   },
 });

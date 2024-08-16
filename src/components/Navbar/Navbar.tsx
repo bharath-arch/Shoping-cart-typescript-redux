@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
         <li className="text-2xl font-semibold text-indigo-600">ShopEase</li>
         <div className="hidden gap-10  md:flex">
           <li
-            className={`cursor-pointer ${
+            className={`cursor-pointer select-none ${
               isActive === "/" ? "text-red-500" : ""
             }`}
             onClick={() => setIsActive("/")}
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li
-            className={`cursor-pointer ${
+            className={`cursor-pointer select-none ${
               isActive === "/cart" ? "text-red-500" : ""
             }`}
             onClick={() => setIsActive("/cart")}
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
             </span>
           </li>
           <li
-            className={`cursor-pointer ${
+            className={`cursor-pointer select-none ${
               isActive === "/about" ? "text-red-500" : ""
             }`}
             onClick={() => setIsActive("/about")}
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
             <div className="absolute right-8 top-0  bg-white shadow-lg rounded-lg p-4 text-center ">
               <ul className="flex flex-col gap-4">
                 <li
-                  className={`cursor-pointer p-3 ${
+                  className={`cursor-pointer select-none p-3 ${
                     isActive === "/" ? "text-red-500" : ""
                   }`}
                   onClick={() => setIsActive("/")}
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li
-                  className={`cursor-pointer p-3 relative ${
+                  className={`cursor-pointer p-3  select-none relative ${
                     isActive === "/cart" ? "text-red-500" : ""
                   }`}
                   onClick={() => setIsActive("/cart")}
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                     {cartsval.length}
                   </span>
                 </li>
-                <li className={`cursor-pointer p-3 relative ${
+                <li className={`cursor-pointer p-3 select-none relative ${
                     isActive === "/about" ? "text-red-500" : ""
                   }`}
                   onClick={() => setIsActive("/about")}>
