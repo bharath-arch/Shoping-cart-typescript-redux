@@ -17,12 +17,14 @@ export type CartItemsType = {
     quantity: number;
     id: number;
     image?: string;
+    price?: number;
   }
   export type CartItems  = {
     name: string;
     quantity: number;
     id: number;
     image?: string;
+    price: number;
   }
   export type CounterState = {
     // value: number;

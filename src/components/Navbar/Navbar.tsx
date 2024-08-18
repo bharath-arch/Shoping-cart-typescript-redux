@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 
 import { Link, useNavigate } from "react-router-dom";
+import PathChecker from "../../PathChecker";
 
 const Navbar: React.FC = () => {
   const cartsval = useSelector((state: RootState) => state.cart.cart);
@@ -31,6 +32,7 @@ const Navbar: React.FC = () => {
   // const [isCartActive, setIsCartActive] = useState(false);
   return (
     <>
+    <PathChecker/>
       <ul className="flex justify-between px-10 py-5 items-center border">
         <li className="text-2xl font-semibold text-indigo-600">ShopEase</li>
         <div className="hidden gap-10  md:flex">

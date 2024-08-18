@@ -27,7 +27,7 @@ const Cards: React.FC = () => {
               <li className="text-2xl font-semibold">{item.price} &#8377; </li>
             </ul>
             <div className=" flex flex-col  gap-2 mt-10 absolute bottom-4">
-              <Button image={item.image} id={item.id} title={item.title} />
+              <Button image={item.image} id={item.id} title={item.title} price={item.price} />
             </div>
           </div>
         ))}

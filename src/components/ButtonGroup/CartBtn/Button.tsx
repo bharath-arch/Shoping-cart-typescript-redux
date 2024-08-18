@@ -9,10 +9,11 @@ interface Props {
   id: number;
   title: string;
   image: string | undefined;
+  price: number | undefined;
 }
-const Button: React.FC<Props> = ({ id, title, image }) => {
-  const handleAdd = useHandleAddCart(id, title, image);
-  const handleRemoveCart = useHandleRemoveCart(id, title, image);
+const Button: React.FC<Props> = ({ id, title, image , price }) => {
+  const handleAdd = useHandleAddCart(id, title, image , price);
+  const handleRemoveCart = useHandleRemoveCart(id, title, image );
 
   const navigate = useNavigate();
   const handlebuy = () => {

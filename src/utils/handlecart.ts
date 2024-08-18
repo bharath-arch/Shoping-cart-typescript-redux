@@ -6,11 +6,11 @@ import { CartItem } from "../types/CartItemsType";
 import { pushToCart, removefromcart } from "../Redux/sclice/cart";
 
 
-export const useHandleAddCart = (id: number, name: string, image: string | undefined) => {
+export const useHandleAddCart = (id: number, name: string, image: string | undefined , price: number | undefined) => {
   const dispatch = useDispatch();
 
   const handleAddCart = () => {
-    const cartItem: CartItem = { id, name, quantity: 1, image };
+    const cartItem: CartItem = { id, name, quantity: 1, image , price};
     dispatch(pushToCart(cartItem));
   };
 
@@ -19,7 +19,7 @@ export const useHandleAddCart = (id: number, name: string, image: string | undef
 };
 
 // Handle removing items from the cart
-export const useHandleRemoveCart = (id: number, name: string, image: string | undefined) => {
+export const useHandleRemoveCart = (id: number, name: string, image: string | undefined ) => {
   const dispatch = useDispatch();
 
   const handleRemoveCart = () => {

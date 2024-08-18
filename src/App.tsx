@@ -6,11 +6,15 @@ import Cards from "./components/Cards/Cards";
 import Cart from "./components/cart/Cart";
 import { Login } from "./components/Authentication/Login/Login";
 import { Register } from "./components/Authentication/Register/Register";
+import PathChecker from "./PathChecker";
+import Contacts  from "./components/Contacts/Contacts";
 
+// const
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <PathChecker />,
     children: [
       {
         index: true, // This defines the index route
@@ -26,12 +30,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/contacts",
+    element: <Contacts />,
+  },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
 ]);
 
 const App: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 };
 
 export default App;
