@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const cartsval = useSelector((state: RootState) => state.cart.cart);
   const [isActive, setIsActive] = useState("/");
-
+  const navigate = useNavigate();
   useEffect(() => {
     const handlePathnameChange = () => {
       const query = window.location.pathname;
-      console.log(query);
+      // console.log(query);
       setIsActive(query);
     };
 
@@ -63,6 +63,15 @@ const Navbar: React.FC = () => {
           >
             <Link to={"about"}>AboutUs</Link>
           </li>
+          <li
+            className={`cursor-pointer select-none `}
+            onClick={() => {
+              localStorage.removeItem("userEmail");
+              navigate("/login");
+            }}
+          >
+            Logout
+          </li>
         </div>
         <div
           className=" gap-10  md:hidden"
@@ -99,10 +108,12 @@ const Navbar: React.FC = () => {
                     {cartsval.length}
                   </span>
                 </li>
-                <li className={`cursor-pointer p-3 select-none relative ${
+                <li
+                  className={`cursor-pointer p-3 select-none relative ${
                     isActive === "/about" ? "text-red-500" : ""
                   }`}
-                  onClick={() => setIsActive("/about")}>
+                  onClick={() => setIsActive("/about")}
+                >
                   <Link to="/about">About Us</Link>
                 </li>
               </ul>
