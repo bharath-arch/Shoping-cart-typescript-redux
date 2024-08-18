@@ -1,35 +1,29 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { LoginBtn } from "../../ButtonGroup/LoginBtn/LoginBtn";
 import { Link } from "react-router-dom";
+import { useFormGetData } from "../../../utils/withFormGetData";
 
 export const Register: React.FC = () => {
-  const navigate = useNavigate();
-  const [formdata, setFormdata] = useState({ email: "" });
-  const [invalidEmail, setInvalidEmail] = useState(false);
-
+  
   function validateEmail(email: string): boolean {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
   }
 
-  const handleChangeEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log(e.target.value)
-    setFormdata({ ...formdata, [e.target.name]: e.target.value });
-  };
+  const { formdata, invalidEmail, setInvalidEmail, handleChangeEvent } =
+    useFormGetData();
 
+ 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateEmail(formdata.email)) {
       setInvalidEmail(false);
-      localStorage.setItem("userEmail", formdata.email);
-      localStorage.setItem("usertype", "user");
-      navigate("/nextPage"); // Replace "/nextPage" with the actual route you want to navigate to
+     
     } else {
       setInvalidEmail(true);
     }
   };
-  console.log(formdata.email)
+ 
   return (
     <>
       <div className="h-screen w-screen flex items-center justify-center">
@@ -59,10 +53,10 @@ export const Register: React.FC = () => {
                 <div className="">
                   <label htmlFor="">Password</label>
                   <input
-                    type="text"
-                    name="email"
-                    // value={formdata.email}
-                    // onChange={handleChangeEvent}
+                    type="password"
+                    name="password"
+                    value={formdata.password}
+                    onChange={handleChangeEvent}
                     className={`border-2 rounded-lg w-[100%] p-2 border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500 ${
                       invalidEmail ? "border-red-500" : ""
                     }`}
@@ -70,7 +64,7 @@ export const Register: React.FC = () => {
                   />
                 </div>
                 <div className="flex justify-center items-center">
-                  <LoginBtn />
+                  <LoginBtn formdata={formdata} type={"register"} />{" "}
                 </div>
               </form>
 
