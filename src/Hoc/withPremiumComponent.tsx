@@ -1,20 +1,23 @@
-import { ComponentType } from "react";
-import { useGetDataQuery } from "../Redux/rtk-querry/rtkSllice";
+import { CardProps } from "../types/CartItemsType";
 
 const withPremiumComponent = (
-  WraperComponent: ComponentType<{ price: number[] | undefined }>
+  WrappedComponent: React.ComponentType<CardProps>
 ) => {
-  //   const data = 0;
-  return function () {
-    const { data } = useGetDataQuery();
-    if (data !== undefined && data?.length === 0) {
-      return <div>No Item Found</div>;
-    } else {
-      const filteredData = data
-        ?.map((item) => item.price)
-        .filter((price) => price > 200);
-      return <WraperComponent price={filteredData} />;
-    }
+  return function (props: CardProps) {
+    return (
+      <>
+        {props.price > 300 ? (
+          <>
+            <div className="relative">
+              <p className="absolute  text-red-500">Premium</p>
+              <WrappedComponent {...props} />
+            </div>
+          </>
+        ) : (
+          <WrappedComponent {...props} />
+        )}
+      </>
+    );
   };
 };
 

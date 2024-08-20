@@ -12,6 +12,12 @@ export type CartItemsType = {
     amount: number;
   };
 
+  export interface CardProps {
+    id: number;
+    image: string;
+    title: string;
+    price: number;
+  }
   export type CartItem  = {
     name: string;
     quantity: number;

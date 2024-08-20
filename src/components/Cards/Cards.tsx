@@ -1,81 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "../ButtonGroup/CartBtn/Button";
-import { useGetDataQuery } from "../../Redux/rtk-querry/rtkSllice";
 import withPremiumComponent from "../../Hoc/withPremiumComponent";
-// import { CartItemsType } from "../../types/CartItemsType";
-// import { useQuery } from "react-query";
-// import { getProducts } from "../../Api/ShopingCartFetch";
+import { CardProps } from "../../types/CartItemsType";
 
-interface Props {
-  price: number[] | undefined;
-}
-const Cards: React.FC<Props> = ({ price }) => {
-  // const { data} = useQuery<CartItemsType[]>(
-  //   ["products"],
-  //   getProducts
-  // );
 
-  const [dimenson, setDimension] = useState({
-    height: "",
-    width: "",
-  });
-
-  console.log(dimenson);
-
-  const { data } = useGetDataQuery();
-
-  useEffect(() => {
-    // console.log(window.innerHeight, window.innerWidth);
-    const handleResize = () => {
-      setDimension({
-        height: `${window.innerHeight}`,
-        width: `${window.innerWidth}`,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [dimenson]);
-
+const Cards: React.FC<CardProps> = ({ ...props }) => {
+  console.log(props, "props");
   return (
     <>
-    {/* {parseInt(dimenson.width) <= 400 && <p className="text-red-600">Small Screen</p>} */}
-      <div className="flex flex-wrap gap-3 justify-center p-5 ">
-        {/* {dimenson.height } x {dimenson.width} */}
-        {data?.map((item) => (
-          <div
-            key={item.id}
-            className="w-60 min-h-96 flex  flex-col place-items-center p-3 border relative"
-          >
-            <img src={item.image} className="w-20 h-20" />
-            <ul className="text-center relative">
-              <li className="mt-10">{item.title}</li>
-              {/* <li>{item.description}</li> */}
-              <li className="text-2xl font-semibold">{item.price} &#8377; </li>
-
-              {price?.includes(item.price) && (
-                <li className="text-green-600 absolute top-0  flex justify-center">
-                  Premium
-                </li>
-              )}
-            </ul>
-            <div className=" flex flex-col  gap-2 mt-10 absolute bottom-4">
-              <Button
-                image={item.image}
-                id={item.id}
-                title={item.title}
-                price={item.price}
-              />
-            </div>
-          </div>
-        ))}
+      <div
+        key={props.id}
+        className="w-60 min-h-96 flex flex-col place-items-center p-3 border relative"
+      >
+        <img src={props.image} className="w-20 h-20" alt={props.title} />
+        <ul className="text-center">
+          <li className="mt-10">{props.title}</li>
+          <li className="text-2xl font-semibold">{props.price} &#8377;</li>
+        </ul>
+        <div className="flex flex-col gap-2 mt-10 absolute bottom-4">
+          <Button
+            image={props.image}
+            id={props.id}
+            title={props.title}
+            price={props.price}
+          />
+        </div>
       </div>
     </>
   );
 };
-const Premium = withPremiumComponent(Cards);
 
-export default Premium;
+const PremiumComponenst = withPremiumComponent(Cards);
+
+export default PremiumComponenst;
