@@ -5,7 +5,6 @@ import Button from "../ButtonGroup/CartBtn/Button";
 const Cart: React.FC = () => {
   const cartsval = useSelector((state: RootState) => state.cart.cart);
 
-  // Calculate total quantity and total price
   const totals = cartsval?.reduce(
     (acc, item) => {
       acc.totalQuantity += item.quantity;

@@ -23,6 +23,7 @@ export const Layout: React.FC = () => {
       if (error) {
         return <div>An error occurred: {(error as Error).message}</div>;
       }
+      
   return (
     <>
     

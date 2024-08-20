@@ -9,6 +9,7 @@ import { Register } from "./components/Authentication/Register/Register";
 import PathChecker from "./PathChecker";
 import Contacts  from "./components/Contacts/Contacts";
 
+
 // const
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: <Cart/>,
       },
       {
         path: "/about",
