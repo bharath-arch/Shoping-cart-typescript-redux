@@ -6,12 +6,7 @@ import withPremiumComponent from "../../Hoc/withPremiumComponent";
 // import { useQuery } from "react-query";
 // import { getProducts } from "../../Api/ShopingCartFetch";
 
-interface card{
-  id:string;
-  price:number;
-  name:string;
-  image:string;
-}
+
 interface Props {
   price: number[] | undefined;
 }
