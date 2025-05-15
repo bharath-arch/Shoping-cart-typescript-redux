@@ -12,6 +12,7 @@ interface Props {
   price: number | undefined;
 }
 const Button: React.FC<Props> = ({ id, title, image , price }) => {
+  console.log(id, title, image , price ,'item');
   const handleAdd = useHandleAddCart(id, title, image , price);
   const handleRemoveCart = useHandleRemoveCart(id, title, image );
 

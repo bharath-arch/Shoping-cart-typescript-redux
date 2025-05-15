@@ -2,7 +2,7 @@ export const About: React.FC = () => {
   return (
     <div className="text-center p-6">
       <h1 className="mt-5 text-4xl font-bold text-gray-800">About Us</h1>
-      <p className="mt-4 text-lg text-gray-600">
+      <p className="mt-4 text-lg text-gray-600" data-testid="about-text">
         Welcome to <span className="font-semibold text-indigo-600">ShopEase</span> – your go-to destination for a seamless online shopping experience!
       </p>
       <p className="mt-4 text-lg text-gray-600">

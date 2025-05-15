@@ -37,7 +37,7 @@ export const Login: React.FC = () => {
             <div className="mt-10 text-left ml-9 mr-6">
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="">
-                  <label htmlFor="">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="text"
                     name="email"
@@ -55,7 +55,7 @@ export const Login: React.FC = () => {
                   )}
                 </div>
                 <div className="">
-                  <label htmlFor="">Password</label>
+                  <label  htmlFor="password">Password</label>
                   <input
                     type="password"
                     name="password"
